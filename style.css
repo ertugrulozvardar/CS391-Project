@@ -22,7 +22,7 @@ h1 {
 }
 
 #header {
-  background-color: darkcyan;
+  background-color: rgb(252, 87, 87);
   color: snow;
   text-align: left;
   padding: 10px;
@@ -37,7 +37,7 @@ h1 {
 #footer {
   clear: both;
   padding: 10px;
-  background-color: darkcyan;
+  background-color: rgb(252, 87, 87);
   color: snow;
   text-align: left;
   bottom: 0;
