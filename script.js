@@ -6,7 +6,7 @@ showForm = (buttontype) => {
 
   document.getElementById(
     "main"
-  ).innerHTML = `<form name = "AdminForm" id = "addForm" onsubmit="return validateForm()"><div class = "gridItem"><label style='font-size:15px; text-color: black;'>Movie Name:</label><input type='text' name = "MovieName"></div>
+  ).innerHTML = `<form name = "AdminForm" id = "addForm" ><div class = "gridItem"><label style='font-size:15px; text-color: black;'>Movie Name:</label><input type='text' name = "MovieName"></div>
    <div class = "gridItem"><label style='font-size:15px;'>Choose Salon:</label>
    <input list='salonlar' name='Saloons'> <datalist id='salonlar'> 
    <option value='Salon 1'></option>
@@ -17,9 +17,9 @@ showForm = (buttontype) => {
    <div class = "gridTime"><label style='font-size:15px; text-color: black;'>Date:</label><input type='date' name ="Date"></div>
    <div class = "gridItem"><label style='font-size:15px; text-color: black;'>Time:</label><input type='time' name = "Time"></div>
    ${summary}
-   <div class = "gridItem"><id = "sub" input type = 'submit' value ='Submit' name="${buttontype}"></div>
+   <div class = "gridItem"><input id = "sub" type = 'button' value ='Submit' name="${buttontype}"></div>
    `;
-
+  document.getElementById("sub").onclick = changeData;
   document.getElementById("addForm").style.width = "350px";
   document.getElementById("addForm").style.height = "300px";
   document.getElementById("addForm").style.marginLeft = "600px";
@@ -36,19 +36,58 @@ showForm = (buttontype) => {
   document.getElementById("addForm").style.alignItems = "center";
 };
 
+changeData = () => {
+  buttontype = document.getElementById("sub").name;
+  validator = validateForm();
+  if(buttontype === "buttonadd"){
+  if(validator){
+    let moviename = document.forms["AdminForm"]["MovieName"].value;
+    let saloons = document.forms["AdminForm"]["Saloons"].value;
+    let date = document.forms["AdminForm"]["Date"].value;
+    let time = document.forms["AdminForm"]["Time"].value;
+    let summary = document.forms["AdminForm"]["Summary"].value;
+  
+    sessionStorage.setItem(sessionStorage.length, JSON.stringify({"name":moviename, "saloons":saloons, "date": date, "time": time, "summary":summary}));
+    console.log({"name":moviename, "saloons":saloons, "date": date, "time": time, "summary":summary});
+
+    myobject = JSON.parse(sessionStorage.getItem(sessionStorage.length - 1));
+  } 
+} else {
+  let key = null;
+  let moviename = document.forms["AdminForm"]["MovieName"].value;
+  let saloons = document.forms["AdminForm"]["Saloons"].value;
+  let date = document.forms["AdminForm"]["Date"].value;
+  let time = document.forms["AdminForm"]["Time"].value;
+  
+  for (item in sessionStorage){
+    console.log(sessionStorage[item]);
+    if(typeof sessionStorage[item] === "string"){
+    if(JSON.parse(sessionStorage[item]).name == moviename && 
+    JSON.parse(sessionStorage[item]).saloons == saloons && 
+    JSON.parse(sessionStorage[item]).date == date && 
+    JSON.parse(sessionStorage[item]).time == time){
+      key = item;
+}}
+}
+sessionStorage.removeItem(key);
+}
+  };
+
 function validateForm() {
-  var moviename = document.forms["AdminForm"]["MovieName"];
-  var salon = document.forms["AdminForm"]["Saloons"];
-  var date = document.forms["AdminForm"]["Date"];
-  var time = document.forms["AdminForm"]["Time"];
-  var summary = document.forms["AdminForm"]["Summary"];
+  buttontype = document.getElementById("sub").name;
+  if(buttontype === "buttonadd"){
+    let moviename = document.forms["AdminForm"]["MovieName"];
+  let salon = document.forms["AdminForm"]["Saloons"];
+  let date = document.forms["AdminForm"]["Date"];
+  let time = document.forms["AdminForm"]["Time"];
+  let summary = document.forms["AdminForm"]["Summary"];
 
   if (moviename.value == "") {
     window.alert("Please enter movie name.");
     moviename.focus();
     return false;
   }
-  const saloons = ["Salon 1", "Salon 2", "Salon3", "Salon 4", "Salon 5"];
+  const saloons = ["Salon 1", "Salon 2", "Salon 3", "Salon 4", "Salon 5"];
   if (salon.value == "" || !saloons.includes(salon.value)) {
     window.alert("Please enter Salon code.");
     salon.focus();
@@ -73,15 +112,39 @@ function validateForm() {
     return false;
   }
   return true;
+} else{
+  let moviename = document.forms["AdminForm"]["MovieName"];
+  let salon = document.forms["AdminForm"]["Saloons"];
+  let date = document.forms["AdminForm"]["Date"];
+  let time = document.forms["AdminForm"]["Time"];
+
+  if (moviename.value == "") {
+    window.alert("Please enter movie name.");
+    moviename.focus();
+    return false;
+  }
+  const saloons = ["Salon 1", "Salon 2", "Salon 3", "Salon 4", "Salon 5"];
+  if (salon.value == "" || !saloons.includes(salon.value)) {
+    window.alert("Please enter Salon code.");
+    salon.focus();
+    return false;
+  }
+
+  if (date.value == "") {
+    window.alert("Please enter a valid date.");
+    date.focus();
+    return false;
+  }
+
+  if (time.value == "") {
+    window.alert("Please enter a valid time.");
+    time.focus();
+    return false;
+  }
+  return true;
+}
 }
 
-addSubmitListener = () => {
-  var sub = document.getElementById("sub");
-  sub.addEventListener("click", saveData, false);
-};
+  
 
-saveData = () => {
-  var moviename = document.getElementByName("MovieName").value;
-  sessionStorage.setItem("movie", moviename);
-};
-window.addEventListener("load", addSubmitListener, false);
+
