@@ -28,15 +28,15 @@ showForm = (buttontype) => {
    `;
   document.getElementById("main").style.display = "grid";
   document.getElementById("main").style.gridAutoFlow = "column";
+  document.getElementById("main").style.justifyItems = "center";
+  document.getElementById("main").style.gridColumnGap = "5rem";
   goBack = () => {
     window.location = "http://127.0.0.1:5500/admin.html";
   };
 
   document.getElementById("sub").onclick = changeData;
-  document.getElementById("addForm").style.position = "absolute";
   document.getElementById("addForm").style.width = "350px";
   document.getElementById("addForm").style.height = "300px";
-  document.getElementById("addForm").style.marginLeft = "350px";
   document.getElementById("addForm").style.backgroundColor =
     "rgba(252, 87, 87, 0.8)";
   document.getElementById("addForm").style.border = "0.35em solid";
@@ -49,10 +49,8 @@ showForm = (buttontype) => {
   document.getElementById("addForm").style.justifyItems = "end";
   document.getElementById("addForm").style.alignItems = "center";
 
-  document.getElementById("nicelist").style.position = "relative";
-  document.getElementById("nicelist").style.width = "350px";
+  document.getElementById("nicelist").style.width = "500px";
   document.getElementById("nicelist").style.height = "300px";
-  document.getElementById("nicelist").style.marginLeft = "450px";
   document.getElementById("nicelist").style.backgroundColor =
     "rgba(252, 87, 87, 0.8)";
   document.getElementById("nicelist").style.border = "0.35em solid";
@@ -119,6 +117,7 @@ changeData = () => {
     }
     sessionStorage.removeItem(key);
   }
+  showForm(buttontype);
 };
 
 function validateForm() {
@@ -194,22 +193,31 @@ function validateForm() {
 }
 
 createList = () => {
-  table = `<table>
-      <tbody>`;
-  let temp = null;
+  mylist = [];
   for (item in sessionStorage) {
-    console.log(sessionStorage[item]);
     if (
       typeof sessionStorage[item] === "string" &&
       sessionStorage[item] !== "true"
     ) {
-      table += `<tr>`;
-      for (data in sessionStorage[item]) {
-        table += `<td>${sessionStorage[item][data]}</td>`;
-      }
-      table += `</tr>`;
+      mylist.push(sessionStorage[item]);
     }
   }
-  table += `</tbody></table>`;
+  table = `</br><table>
+          <colgroup span="4">
+        </colgroup>
+        <tr>
+        <th>Movie Name</th>
+        <th>Salon Number</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>`;
+  let temp = null;
+  for (item in mylist) {
+    x = JSON.parse(mylist[item]);
+    table += `<tr>`;
+    table += `<td>${x.name}</td><td>${x.saloons}</td><td>${x.date}</td><td>${x.time}</td>`;
+    table += `</tr>`;
+  }
+  table += `</table>`;
   return table;
 };
