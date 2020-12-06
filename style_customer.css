@@ -31,7 +31,7 @@ h1 {
 #main {
   width: auto;
   text-align: center;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 #footer {
   clear: both;
@@ -155,4 +155,56 @@ td {
   height: 20px;
   border: 3px solid black;
   background-color: white;
+}
+
+.container {
+  height: 90vh;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.cell {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  flex: 1;
+  overflow: auto;
+}
+.cell-1 {
+  background: rgb(175, 84, 51);
+}
+.cell-2 {
+  background: rgb(175, 84, 51);
+}
+.cell-3 {
+  background: rgb(175, 84, 51);
+}
+.cell-4 {
+  background: rgb(175, 84, 51);
+}
+.cell-5 {
+  background: rgb(175, 84, 51);
+}
+.cell-6 {
+  background: rgb(175, 84, 51);
+}
+.cell-7 {
+  background: rgb(175, 84, 51);
+}
+.cell-8 {
+  background: rgb(175, 84, 51);
+}
+.cell-9 {
+  background: rgb(175, 84, 51);
+}
+.container {
+  grid-gap: 10px 10px;
+}
+
+#saloon_header {
+  padding-top: 0;
+  text-align: center;
+  font-size: 30px;
 }

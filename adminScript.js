@@ -122,12 +122,43 @@ changeData = () => {
 
 function validateForm() {
   buttontype = document.getElementById("sub").name;
+
+  
+
+
+
   if (buttontype === "buttonadd") {
     let moviename = document.forms["AdminForm"]["MovieName"];
     let salon = document.forms["AdminForm"]["Saloons"];
     let date = document.forms["AdminForm"]["Date"];
     let time = document.forms["AdminForm"]["Time"];
     let summary = document.forms["AdminForm"]["Summary"];
+
+
+
+    // Check if another saloon exists 
+    mylist = [];
+  for (item in sessionStorage) {
+    if (
+      typeof sessionStorage[item] === "string" &&
+      sessionStorage[item] !== "true"
+    ) {
+      mylist.push(sessionStorage[item]);
+    }
+  }
+
+  for (item in mylist) {
+    x = JSON.parse(mylist[item]);
+    if(x.saloons == salon.value){
+      alert("This saloon is occupied please select another saloon or remove the movie in this saloon.")
+      return false;
+    }
+  }
+
+
+      // Check if another saloon exists  end
+
+
 
     if (moviename.value == "") {
       window.alert("Please enter movie name.");
