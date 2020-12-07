@@ -30,3 +30,10 @@ for (item in mylist) {
     }
 
   }
+
+
+document.getElementById("saloon_1").innerHTML = saloon_one_string;
+document.getElementById("saloon_2").innerHTML = saloon_two_string;
+document.getElementById("saloon_3").innerHTML = saloon_three_string;
+document.getElementById("saloon_4").innerHTML = saloon_four_string;
+document.getElementById("saloon_5").innerHTML = saloon_five_string;
