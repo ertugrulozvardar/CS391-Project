@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>OzuMovies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="adminScript.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style_saloon.css" />
+    <script src="saloon_script_seats.js"></script>
   </head>
 
   <body>
@@ -21,9 +21,27 @@
     </div>
       <div id="content">
         <div id="main">
-            <button id = "buttonadd" onclick="showForm(id)">Add Movie</button>
-            
-            <button id = "buttonremove" onclick="showForm(id)">Remove Movie</button>
+          <div class = "main" id = "main">
+            <div class="gridItem">
+            <form name = "AdminForm" id = "addForm" >
+            <div class = "gridItem"><label style='font-size:15px; text-color: black;'>Movie Name:</label><input type='text' name = "MovieName"></div>
+            <div class = "gridItem"><label style='font-size:15px;'>Choose Salon:</label>
+              <input list='salonlar' name='Saloons'> 
+                <datalist id='salonlar'> 
+                  <option value='Salon 1'></option>
+                  <option value='Salon 2'></option>
+                  <option value='Salon 3'></option>
+                  <option value='Salon 4'></option>
+                  <option value='Salon 5'></option>
+                </datalist>
+            </div>
+            <div class = "gridTime"><label style='font-size:15px; text-color: black;'>Date:</label><input type='date' name ="Date"></div>
+            <div class = "gridItem"><label style='font-size:15px; text-color: black;'>Time:</label><input type='time' name = "Time"></div>
+            <div class = "gridItem"><input id = "sub" type = 'button' value ='Submit' name="${buttontype}"></div>
+            <div class = "gridItem"><input id = "backbutton" type = 'button' value = 'Back' onclick = "goBack()"></div></form></div>
+         
+         
+            <div class = "gridItem"><form name = "ListForm" id = "nicelist" > </form></div></div>
         </div>
       </div>
       <div id="footer">Copyright © 2020</div>
