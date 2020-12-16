@@ -1,57 +1,6 @@
-
+document.getElementById("sub").onclick = changeData;
   changeData = () => {
-    buttontype = document.getElementById("sub").name;
-    validator = validateForm();
-    if (buttontype === "buttonadd_seat_one") {
-      if (validator) {
-        let moviename = document.forms["AdminForm"]["MovieName"].value;
-        let saloons = document.forms["AdminForm"]["Saloons"].value;
-        let date = document.forms["AdminForm"]["Date"].value;
-        let time = document.forms["AdminForm"]["Time"].value;
-        let summary = document.forms["AdminForm"]["Summary"].value;
-  
-        localStorage.setItem(
-          localStorage.length,
-          JSON.stringify({
-            name: moviename,
-            saloons: saloons,
-            date: date,
-            time: time,
-            summary: summary,
-          })
-        );
-        console.log({
-          name: moviename,
-          saloons: saloons,
-          date: date,
-          time: time,
-          summary: summary,
-        });
-  
-        myobject = JSON.parse(localStorage.getItem(localStorage.length - 1));
-      }
-    } else {
-      let key = null;
-      let moviename = document.forms["AdminForm"]["MovieName"].value;
-      let saloons = document.forms["AdminForm"]["Saloons"].value;
-      let date = document.forms["AdminForm"]["Date"].value;
-      let time = document.forms["AdminForm"]["Time"].value;
-  
-      for (item in localStorage) {
-        console.log(localStorage[item]);
-        if (typeof localStorage[item] === "string") {
-          if (
-            JSON.parse(localStorage[item]).name == moviename &&
-            JSON.parse(localStorage[item]).saloons == saloons &&
-            JSON.parse(localStorage[item]).date == date &&
-            JSON.parse(localStorage[item]).time == time
-          ) {
-            key = item;
-          }
-        }
-      }
-      localStorage.removeItem(key);
-    }
+    
 
 
   };
@@ -61,7 +10,151 @@
 
 
 
+function changeData(){
 
+  
+    buttontype = document.getElementById("sub").name;
+    validator = validateForm();
+    if (buttontype === "buttonadd_seat_one") {
+      if (validator) {
+
+        let seat_name = document.forms["AdminForm"]["koltuk"].value;
+      let seat_no = document.forms["AdminForm"]["numara"].value;
+      let name_surname = document.forms["AdminForm"]["name_surname"].value;
+  
+      let seat_val = seat_name+seat_no;
+  
+        localStorage.setItem(
+          localStorage.length,
+          JSON.stringify({
+            saloon_type: "Saloon 1",
+            seat: seat_val,
+            customer: name_surname,
+          })
+        );
+        console.log({
+          saloon_type: "Saloon 1",
+            seat: seat_val,
+            customer: name_surname,
+        });
+  
+        myobject = JSON.parse(localStorage.getItem(localStorage.length - 1));
+        window.alert("Seat has been assigned");
+      }
+    } else if(buttontype === "buttonadd_seat_two"){
+      if (validator) {
+
+        let seat_name = document.forms["AdminForm"]["koltuk"].value;
+      let seat_no = document.forms["AdminForm"]["numara"].value;
+      let name_surname = document.forms["AdminForm"]["name_surname"].value;
+  
+      let seat_val = seat_name+seat_no;
+  
+        localStorage.setItem(
+          localStorage.length,
+          JSON.stringify({
+            saloon_type: "Saloon 2",
+            seat: seat_val,
+            customer: name_surname,
+          })
+        );
+        console.log({
+          saloon_type: "Saloon 2",
+            seat: seat_val,
+            customer: name_surname,
+        });
+  
+        myobject = JSON.parse(localStorage.getItem(localStorage.length - 1));
+        window.alert("Seat has been assigned");
+      }
+
+
+    }else if(buttontype === "buttonadd_seat_three"){
+      if (validator) {
+
+        let seat_name = document.forms["AdminForm"]["koltuk"].value;
+      let seat_no = document.forms["AdminForm"]["numara"].value;
+      let name_surname = document.forms["AdminForm"]["name_surname"].value;
+  
+      let seat_val = seat_name+seat_no;
+  
+        localStorage.setItem(
+          localStorage.length,
+          JSON.stringify({
+            saloon_type: "Saloon 3",
+            seat: seat_val,
+            customer: name_surname,
+          })
+        );
+        console.log({
+          saloon_type: "Saloon 3",
+            seat: seat_val,
+            customer: name_surname,
+        });
+  
+        myobject = JSON.parse(localStorage.getItem(localStorage.length - 1));
+        window.alert("Seat has been assigned");
+      }
+
+
+    }else if(buttontype === "buttonadd_seat_four"){
+      if (validator) {
+
+        let seat_name = document.forms["AdminForm"]["koltuk"].value;
+      let seat_no = document.forms["AdminForm"]["numara"].value;
+      let name_surname = document.forms["AdminForm"]["name_surname"].value;
+  
+      let seat_val = seat_name+seat_no;
+  
+        localStorage.setItem(
+          localStorage.length,
+          JSON.stringify({
+            saloon_type: "Saloon 4",
+            seat: seat_val,
+            customer: name_surname,
+          })
+        );
+        console.log({
+          saloon_type: "Saloon 4",
+            seat: seat_val,
+            customer: name_surname,
+        });
+  
+        myobject = JSON.parse(localStorage.getItem(localStorage.length - 1));
+        window.alert("Seat has been assigned");
+      }
+
+
+    }else if(buttontype === "buttonadd_seat_five"){
+      if (validator) {
+
+        let seat_name = document.forms["AdminForm"]["koltuk"].value;
+      let seat_no = document.forms["AdminForm"]["numara"].value;
+      let name_surname = document.forms["AdminForm"]["name_surname"].value;
+  
+      let seat_val = seat_name+seat_no;
+  
+        localStorage.setItem(
+          localStorage.length,
+          JSON.stringify({
+            saloon_type: "Saloon 5",
+            seat: seat_val,
+            customer: name_surname,
+          })
+        );
+        console.log({
+          saloon_type: "Saloon 5",
+            seat: seat_val,
+            customer: name_surname,
+        });
+  
+        myobject = JSON.parse(localStorage.getItem(localStorage.length - 1));
+        window.alert("Seat has been assigned");
+      }
+
+
+    }
+}
 
 
 
@@ -70,41 +163,12 @@
 
 
   function validateForm() {
-    buttontype = document.getElementById("sub").name;
+    // buttontype = document.getElementById("sub").name;
   
-    
-  
-  
-  
-    if (buttontype === "buttonadd") {
+
       let seat_name = document.forms["AdminForm"]["koltuk"];
       let seat_no = document.forms["AdminForm"]["numara"];
       let name_surname = document.forms["AdminForm"]["name_surname"];
-  
-      let seat_val = seat_name+seat_no
-  
-      // Check if another seat exists 
-      mylist = [];
-    for (item in localStorage) {
-      if (
-        typeof localStorage[item] === "string" &&
-        localStorage[item] !== "true"
-      ) {
-        mylist.push(localStorage[item]);
-      }
-    }
-  
-    for (item in mylist) {
-      x = JSON.parse(mylist[item]);
-      if(x.seat == seat_val){
-        alert("This seat is occupied please select another seat.")
-        return false;
-      }
-    }
-  
-  
-        // Check if another seat exists  end
-  
   
   
       if (seat_name.value == "") {
@@ -130,37 +194,7 @@
 
 
 
-    } else {
-      let moviename = document.forms["AdminForm"]["MovieName"];
-      let salon = document.forms["AdminForm"]["Saloons"];
-      let date = document.forms["AdminForm"]["Date"];
-      let time = document.forms["AdminForm"]["Time"];
-  
-      if (moviename.value == "") {
-        window.alert("Please enter movie name.");
-        moviename.focus();
-        return false;
-      }
-      const saloons = ["Salon 1", "Salon 2", "Salon 3", "Salon 4", "Salon 5"];
-      if (salon.value == "" || !saloons.includes(salon.value)) {
-        window.alert("Please enter Salon code.");
-        salon.focus();
-        return false;
-      }
-  
-      if (date.value == "") {
-        window.alert("Please enter a valid date.");
-        date.focus();
-        return false;
-      }
-  
-      if (time.value == "") {
-        window.alert("Please enter a valid time.");
-        time.focus();
-        return false;
-      }
-      return true;
-    }
+    
   }
 
 document.getElementById("main").style.display = "grid";
