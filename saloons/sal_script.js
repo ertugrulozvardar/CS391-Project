@@ -1,9 +1,5 @@
-document.getElementById("sub").onclick = changeData;
-  changeData = () => {
-    
 
 
-  };
 
 
 
@@ -202,7 +198,7 @@ document.getElementById("main").style.gridAutoFlow = "column";
 document.getElementById("main").style.justifyItems = "center";
 document.getElementById("main").style.gridColumnGap = "5rem";
 
-document.getElementById("sub").onclick = changeData;
+
 document.getElementById("addForm").style.width = "350px";
 document.getElementById("addForm").style.height = "300px";
 document.getElementById("addForm").style.backgroundColor =
