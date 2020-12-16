@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <title>OzuMovies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="adminScript.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="sal_saloon.css" />
+    <script src="sal_script.js"></script>
   </head>
 
   <body>
     <div id="container">
       <div id="header">
-        <h1>OzuMovies</h1>
+        <h1>Saloon 1 Seat Selection</h1>
           <div id = "headernav">
             <a href="https://www.google.com"><img src="header-icons/homepage.png" id="navicon"></img></a>
             <a href="file:///C:/Users/baris/Documents/GitHub/CS391-Project/admin.html"><img src="header-icons/film.png" id="navicon"></img></a> 
@@ -19,14 +19,78 @@
           </div>
         </div>
     </div>
-      <div id="content">
-        <div id="main">
-            <button id = "buttonadd" onclick="showForm(id)">Add Movie</button>
-            
-            <button id = "buttonremove" onclick="showForm(id)">Remove Movie</button>
-        </div>
+      
+
+
+
+
+    <div class="main" id="main" style="display: grid; grid-auto-flow: column; justify-items: center; column-gap: 5rem;">
+      
+      <div class="gridItem">
+      <form name="AdminForm" id="addForm" style="width: 350px; height: 300px; background-color: rgba(252, 87, 87, 0.8); border: 0.35em solid; border-radius: 20px; display: grid; grid-template-columns: auto; grid-template-rows: 50px 50px 50px 50px 50px; justify-content: center; place-items: center end;">
+        <div class="gridItem"><label style="font-size:15px;">Choose Seat Name:</label>
+          <input list="salonlar" name="Saloons"> 
+            <datalist id="salonlar"> 
+              <option value="A"></option>
+              <option value="B"></option>
+              <option value="C"></option>
+              <option value="D"></option>
+              <option value="E"></option>
+              <option value="F"></option>
+              <option value="G"></option>
+              <option value="H"></option>
+              <option value="J"></option>
+              <option value="K"></option>
+              <option value="L"></option>
+            </datalist>
+          </div>
+
+      <div class="gridItem"><label style="font-size:15px;">Choose Seat Number:</label>
+      <input list="salonlar" name="Saloons"> 
+        <datalist id="salonlar"> 
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+          <option value="11"></option>
+          <option value="12"></option>
+          <option value="13"></option>
+          <option value="14"></option>
+          <option value="15"></option>
+          <option value="16"></option>
+        </datalist>
       </div>
-      <div id="footer">Copyright © 2020</div>
+
+
+      
+      <div class="gridItem"><label style="font-size:15px; text-color: black;">Name and Surname:</label><textarea name="Summary"></textarea></div>
+      <div class="gridItem"><input id="sub" type="button" value="Submit" name="buttonadd_seat_three"></div>
+   
+   
+      <div class="gridItem">
+        <form name="ListForm" id="nicelist" style="width: 500px; height: 300px; background-color: rgba(252, 87, 87, 0.8); border: 0.35em solid; border-radius: 20px; display: grid; grid-template-columns: auto; grid-template-rows: 50px 50px 50px 50px 50px; justify-content: center; place-items: center end;"><br>
+              <img style="position: relative;top: 75px;" src="saloon_seats.jpg" alt="Saloon Seats" width="500" height="300">
+
+      </form>
     </div>
+
+  </div>
+
+
+
+
+
+
+      <div id="footer">Copyright Â© 2020</div>
+    </div>
+    
   </body>
+  
 </html>
+
