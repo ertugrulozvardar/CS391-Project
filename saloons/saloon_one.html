@@ -8,7 +8,7 @@
     <script src="sal_script.js"></script>
   </head>
 
-  <body>
+  <body onload="onStart()">
     <div id="container">
       <div id="header">
         <h1>Saloon 1 Seat Selection</h1>
@@ -24,28 +24,34 @@
 
 
 
-    <div class="main" id="main" style="display: grid; grid-auto-flow: column; justify-items: center; column-gap: 5rem;">
-<button type="button" id='submit' class='submit'>Submit</button>
+    <div class="main" id="main" style="display: grid; justify-items: center; align-items: center; justify-content: center; text-align: center;">
    
       <div class="gridItem">
         <form name="ListForm" id="nicelist" style="width: 500px; height: 300px; background-color: rgba(252, 87, 87, 0.8); border: 0.35em solid; border-radius: 20px; align-items: end; justify-content: center;"><br>
               <div class = 'wrapper' id='wrapper'>
-              <script>
+                <script>
                 str = ``;
-                for (var i = 0; i < 80; i++) {
-                  str += `<button class="box a" type ="button" id = ${i} onclick = "chooseSeat(${i})" >${
- i + 1
-                  }</button>`;
-                }
-                document.getElementById('wrapper').innerHTML = str;
-              </script>
+                  for (var i = 0; i < 80; i++) {
+                    str += `<button class="box a" type ="button" id = ${
+                      i + 1
+                    } onclick = "chooseSeat(${i + 1})" >${i + 1}</button>`;
+                  }
+              
+                  document.getElementById("wrapper").innerHTML = str;</script>
 
               
-              <div class='perde' id = 'perde' name = 'salon_1'>PERDE</div>
-              
-              
             </div>
+            <div class='perde' id = 'perde' name = 'salon_1'>PERDE</div>
       </form>
+      <div class = "gridItem">
+        <button type="button" id='submit' class='submit' onclick="submitSeat()">Submit</button>
+      </div>
+    </br>
+      <div class = "gridItem">
+        <form action="../customer.html"><input type="submit" value="Back" class='back'/>
+</form>
+      </div>
+     
     </div>
 
   </div>
