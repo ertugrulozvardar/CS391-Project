@@ -8,7 +8,7 @@
     <script src="sal_script.js"></script>
   </head>
 
-  <body>
+  <body onload="onStart()">
     <div id="container">
       <div id="header">
         <h1>Saloon 1 Seat Selection</h1>
@@ -24,69 +24,41 @@
 
 
 
-    <div class="main" id="main" style="display: grid; grid-auto-flow: column; justify-items: center; column-gap: 5rem;">
-      
-      <div class="gridItem">
-      <form name="AdminForm" id="addForm" style="width: 350px; height: 300px; background-color: rgba(252, 87, 87, 0.8); border: 0.35em solid; border-radius: 20px; display: grid; grid-template-columns: auto; grid-template-rows: 50px 50px 50px 50px 50px; justify-content: center; place-items: center end;">
-        <div class="gridItem"><label style="font-size:15px;">Choose Seat Name:</label>
-          <input list="koltuklar" name="koltuk"> 
-            <datalist id="koltuklar"> 
-              <option value="A"></option>
-              <option value="B"></option>
-              <option value="C"></option>
-              <option value="D"></option>
-              <option value="E"></option>
-              <option value="F"></option>
-              <option value="G"></option>
-              <option value="H"></option>
-              <option value="J"></option>
-              <option value="K"></option>
-              <option value="L"></option>
-            </datalist>
-          </div>
-
-      <div class="gridItem"><label style="font-size:15px;">Choose Seat Number:</label>
-      <input list="salonlar" name="numara"> 
-        <datalist id="salonlar"> 
-          <option value="1"></option>
-          <option value="2"></option>
-          <option value="3"></option>
-          <option value="4"></option>
-          <option value="5"></option>
-          <option value="6"></option>
-          <option value="7"></option>
-          <option value="8"></option>
-          <option value="9"></option>
-          <option value="10"></option>
-          <option value="11"></option>
-          <option value="12"></option>
-          <option value="13"></option>
-          <option value="14"></option>
-          <option value="15"></option>
-          <option value="16"></option>
-        </datalist>
-      </div>
-
-
-      
-      <div class="gridItem"><label style="font-size:15px; text-color: black;">Name and Surname:</label><textarea name="name_surname"></textarea></div>
-      <div class="gridItem"><input id="sub" type="button" value="Submit" name="buttonadd_seat_one" onclick="changeData()"></div>
-      <button type="button" onclick="javascript:history.back()">Back</button>
-</form></div>
-   
+    <div class="main" id="main" style="display: grid; justify-items: center; align-items: center; justify-content: center; text-align: center;">
    
       <div class="gridItem">
-        <form name="ListForm" id="nicelist" style="width: 500px; height: 300px; background-color: rgba(252, 87, 87, 0.8); border: 0.35em solid; border-radius: 20px; display: grid; grid-template-columns: auto; grid-template-rows: 50px 50px 50px 50px 50px; justify-content: center; place-items: center end;"><br>
-              <img style="position: relative;top: 75px;" src="saloon_seats.jpg" alt="Saloon Seats" width="500" height="300">
+        <form name="ListForm" id="nicelist" style="width: 500px; height: 300px; background-color: rgba(252, 87, 87, 0.8); border: 0.35em solid; border-radius: 20px; align-items: end; justify-content: center;"><br>
+              <div class = 'wrapper' id='wrapper'>
+                <script>
+                str = ``;
+                  for (var i = 0; i < 80; i++) {
+                    str += `<button class="box a" type ="button" id = ${
+                      i + 1
+                    } onclick = "chooseSeat(${i + 1})" >${i + 1}</button>`;
+                  }
+              
+                  document.getElementById("wrapper").innerHTML = str;</script>
 
+              
+            </div>
+            <div class='perde' id = 'perde' name = 'salon_1'>PERDE</div>
       </form>
+      <div class = "gridItem">
+        <button type="button" id='submit' class='submit' onclick="submitSeat()">Submit</button>
+      </div>
+    </br>
+      <div class = "gridItem">
+        <form action="../customer.html"><input type="submit" value="Back" class='back'/>
+</form>
+      </div>
+     
     </div>
 
   </div>
 
 
 
-
+    </div>
 
 
       <div id="footer">Copyright © 2020</div>
