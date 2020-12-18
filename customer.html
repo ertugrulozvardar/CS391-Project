@@ -5,51 +5,58 @@
     <title>OzuMovies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="style_customer.css" />
+
+    
     <script src="customerScript.js"></script>
     
   </head>
 
   <body>
+    <video id = 'video' autoplay muted loop>
+        <source src = '/videos/background.webm' type='video/webm'>
+      </video>
     <div id="container">
+       
       <div id="header">
         <h1>OzuMovies</h1>
           <div id = "headernav">
-            <a href="https://www.google.com"><img src="header-icons/homepage.png" id="navicon"></img></a>
-            <a href="file:///C:/Users/baris/Documents/GitHub/CS391-Project/admin.html"><img src="header-icons/film.png" id="navicon"></img></a> 
-            <a href="www.google.com"><img src="header-icons/user.png" id="navicon"></img></a>
+            <a href="/customer.html"><img src="header-icons/film.png" id="navicon"></img></a> 
+            <a href="./admin.html"><img src="header-icons/user.png" id="navicon"></img></a>
           </div>
         </div>
     </div>
       <div id="content">
+       
         <div id="main">
+          
             <div class="container">
-                <div class="cell cell-1">
+                <div class="cell cell-1" id = "cell-1" style="background-image: '/images/curtain.jpg';">
                     <h1 id="saloon_header" > <a id = "saloon_first" href="saloons/saloon_one.html">Salon 1</a> </h1> 
                     <p id="saloon_1"></p> 
                     <p id="time_1" style="font-size: 16px;"></p> 
                     
                 </div>
-                <div class="cell cell-2">
+                <div class="cell cell-2" id = "cell-2">
                     <h1 id="saloon_header"> <a id = "saloon_second" href="saloons/saloon_two.html">Salon 2</a> </h1>
                     <p id="saloon_2"></p>
                     <p id="time_2" style="font-size: 16px;"></p> 
                     
                     
                 </div>
-                <div class="cell cell-3">
+                <div class="cell cell-3" id = "cell-3">
                     <h1 id="saloon_header"> <a id = "saloon_three" href="saloons/saloon_three.html">Salon 3</a> </h1>
                     <p id="saloon_3"></p>
                     <p id="time_3" style="font-size: 16px;"></p> 
                      
                     
                 </div>
-                <div class="cell cell-4">
+                <div class="cell cell-4" id = "cell-4">
                     <h1 id="saloon_header"> <a id = "saloon_four" href="saloons/saloon_four.html">Salon 4</a> </h1>
                     <p id="saloon_4"></p>
                     <p id="time_4" style="font-size: 16px;"></p> 
                     
                 </div>
-                <div class="cell cell-5">
+                <div class="cell cell-5" id = "cell-5" style="background-image: '/images/curtain.jpg' >
                     <h1 id="saloon_header"> <a id = "saloon_five" href="saloons/saloon_five.html">Salon 5 </a></h1>
                     <p id="saloon_5"></p>
                     <p id="time_5" style="font-size: 16px;"></p> 
@@ -59,6 +66,7 @@
             
         </div>
       </div>
+      
       <div id="footer">Copyright © 2020</div>
     </div>
   </body>
