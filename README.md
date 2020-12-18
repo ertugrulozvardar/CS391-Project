@@ -26,7 +26,8 @@ This project aims to provide a lightweight web application for movie theaters wi
 
 
 
-## ★	No additional libraries were used in this project. (Only pure HTML/CSS/JS)
+## ★	No additional libraries were used in this project. (Only pure HTML/CSS/JS) / Using LiveServer VSCode extension is recommended since background video does not work without the LiveServer.
+        
 
 ## Instructions: 
     1.	Open the admin.html file.
