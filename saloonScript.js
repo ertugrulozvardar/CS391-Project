@@ -60,19 +60,19 @@ document.getElementById('saloon_5').innerHTML = saloon_five_string;
 
 document.getElementById(
   'cell-1'
-).style.backgroundImage = `url(${image_one_string})`;
+).style.backgroundImage = `url(./${image_one_string})`;
 document.getElementById(
   'cell-2'
-).style.backgroundImage = `url(${image_two_string})`;
+).style.backgroundImage = `url(./${image_two_string})`;
 document.getElementById(
   'cell-3'
-).style.backgroundImage = `url(${image_three_string})`;
+).style.backgroundImage = `url(./${image_three_string})`;
 document.getElementById(
   'cell-4'
-).style.backgroundImage = `url(${image_four_string})`;
+).style.backgroundImage = `url(./${image_four_string})`;
 document.getElementById(
   'cell-5'
-).style.backgroundImage = `url(${image_five_string})`;
+).style.backgroundImage = `url(./${image_five_string})`;
 
 if (time_one_string != '') {
   document.getElementById('time_1').innerHTML = 'Time: ' + time_one_string;

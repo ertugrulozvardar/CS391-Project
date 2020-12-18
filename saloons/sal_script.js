@@ -222,15 +222,47 @@ function chooseSeat(buttonId) {
 }
 
 function submitSeat() {
-  if (localStorage.clickcount) {
-    localStorage.clickcount = Number(localStorage.clickcount) + 1;
-  } else {
-    localStorage.clickcount = 1;
+  salonlar = [];
+  for (let i = 0; i < sessionStorage.length; i++) {
+    sal = JSON.parse(sessionStorage[i])['saloons'];
+    switch (sal) {
+      case 'Salon 1':
+        sal = 'salon_1';
+        break;
+      case 'Salon 2':
+        sal = 'salon_2';
+        break;
+      case 'Salon 3':
+        sal = 'salon_3';
+        break;
+      case 'Salon 4':
+        sal = 'salon_4';
+        break;
+      case 'Salon 5':
+        sal = 'salon_5';
+        break;
+    }
+    salonlar.push(sal);
   }
-  salon = document.getElementById('perde').getAttribute('name').toString();
-  list = globalThis.seatList;
-  localStorage.setItem(salon + '_' + localStorage.clickcount, list);
-  location.reload();
+
+  let isEmpty = true;
+  for (var i = 0; i < salonlar.length; i++) {
+    if (salonlar[i] === salon_name) isEmpty = false;
+  }
+
+  if (!isEmpty) {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount) + 1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    salon = document.getElementById('perde').getAttribute('name').toString();
+    list = globalThis.seatList;
+    localStorage.setItem(salon + '_' + localStorage.clickcount, list);
+    location.reload();
+  } else {
+    alert('There is no movie here!');
+  }
 }
 
 function assign_seat() {
