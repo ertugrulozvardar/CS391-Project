@@ -1,5 +1,4 @@
-# CS391-Project
-Course Repository for CS391 Web App Development 
+# CS391-Project-Movie Theater App
 
 ## Introduction:
 This project aims to provide a lightweight web application for movie theaters with functionalities such as movie editing (adding/removing) for admins and seat reservation for customers. 
