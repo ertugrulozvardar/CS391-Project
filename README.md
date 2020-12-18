@@ -5,16 +5,16 @@ Course Repository for CS391 Web App Development
 This project aims to provide a lightweight web application for movie theaters with functionalities such as movie editing (adding/removing) for admins and seat reservation for customers. 
 
 ## Usage Scenarios:
-Admins: 
-Case I (Add Movie)
+### Admins: 
+### Case I (Add Movie)
     1.	Opening the admin page
     2.	Choosing the “Add Movie” option
     3.	Submitting a new movie with required inputs.
-Case II (Remove Movie)
+### Case II (Remove Movie)
     1.	Opening the admin page
     2.	Choosing the “Remove Movie” option
     3.	Deleting a movie from the movie table.
-Customers:
+### Customers:
     1.	Opening the customer page.
     2.	Selecting the movie saloon from 1 to 5.
     3.	Selecting the seat(s) and submitting the reservation.
