@@ -17,12 +17,12 @@ let image_four_string = '';
 let image_five_string = '';
 
 mylist = [];
-for (item in sessionStorage) {
+for (item in localStorage) {
   if (
-    typeof sessionStorage[item] === 'string' &&
-    sessionStorage[item] !== 'true'
+    typeof localStorage[item] === 'string' &&
+    localStorage[item] !== 'true'
   ) {
-    mylist.push(sessionStorage[item]);
+    mylist.push(localStorage[item]);
   }
 }
 

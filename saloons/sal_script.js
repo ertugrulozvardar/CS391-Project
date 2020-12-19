@@ -223,8 +223,8 @@ function chooseSeat(buttonId) {
 
 function submitSeat() {
   salonlar = [];
-  for (let i = 0; i < sessionStorage.length; i++) {
-    sal = JSON.parse(sessionStorage[i])['saloons'];
+  for (let i = 0; i < localStorage.length; i++) {
+    sal = JSON.parse(localStorage[i])['saloons'];
     switch (sal) {
       case 'Salon 1':
         sal = 'salon_1';

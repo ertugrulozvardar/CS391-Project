@@ -75,8 +75,8 @@ changeData = () => {
       let time = document.forms['AdminForm']['Time'].value;
       let summary = document.forms['AdminForm']['Summary'].value;
 
-      sessionStorage.setItem(
-        sessionStorage.length,
+      localStorage.setItem(
+        localStorage.length,
         JSON.stringify({
           name: moviename,
           saloons: saloons,
@@ -93,7 +93,7 @@ changeData = () => {
         summary: summary,
       });
 
-      myobject = JSON.parse(sessionStorage.getItem(sessionStorage.length - 1));
+      myobject = JSON.parse(localStorage.getItem(localStorage.length - 1));
     }
   } else {
     let key = null;
@@ -102,20 +102,20 @@ changeData = () => {
     let date = document.forms['AdminForm']['Date'].value;
     let time = document.forms['AdminForm']['Time'].value;
 
-    for (item in sessionStorage) {
-      console.log(sessionStorage[item]);
-      if (typeof sessionStorage[item] === 'string') {
+    for (item in localStorage) {
+      console.log(localStorage[item]);
+      if (typeof localStorage[item] === 'string') {
         if (
-          JSON.parse(sessionStorage[item]).name == moviename &&
-          JSON.parse(sessionStorage[item]).saloons == saloons &&
-          JSON.parse(sessionStorage[item]).date == date &&
-          JSON.parse(sessionStorage[item]).time == time
+          JSON.parse(localStorage[item]).name == moviename &&
+          JSON.parse(localStorage[item]).saloons == saloons &&
+          JSON.parse(localStorage[item]).date == date &&
+          JSON.parse(localStorage[item]).time == time
         ) {
           key = item;
         }
       }
     }
-    sessionStorage.removeItem(key);
+    localStorage.removeItem(key);
   }
   showForm(buttontype);
 };
@@ -132,12 +132,12 @@ function validateForm() {
 
     // Check if another saloon exists
     mylist = [];
-    for (item in sessionStorage) {
+    for (item in localStorage) {
       if (
-        typeof sessionStorage[item] === 'string' &&
-        sessionStorage[item] !== 'true'
+        typeof localStorage[item] === 'string' &&
+        localStorage[item] !== 'true'
       ) {
-        mylist.push(sessionStorage[item]);
+        mylist.push(localStorage[item]);
       }
     }
 
@@ -218,12 +218,12 @@ function validateForm() {
 
 createList = () => {
   mylist = [];
-  for (item in sessionStorage) {
+  for (item in localStorage) {
     if (
-      typeof sessionStorage[item] === 'string' &&
-      sessionStorage[item] !== 'true'
+      typeof localStorage[item] === 'string' &&
+      localStorage[item] !== 'true'
     ) {
-      mylist.push(sessionStorage[item]);
+      mylist.push(localStorage[item]);
     }
   }
   table = `</br><table>
