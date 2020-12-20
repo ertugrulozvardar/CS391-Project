@@ -37,14 +37,15 @@ This project aims to provide a lightweight web application for movie theaters wi
 
 ## Instructions:
 
-    1.	Open the admin.html file.
-    2.	Add images you will use for your movies to the /images directory.
-    3.	Add one or more movie(s).
-    4.	Navigate to the customer page by clicking the “Movies” icon on the top right of the page.
-    5.	Choose the saloon corresponding to the added movie.
-    6.	Choose your seat(s) and submit your reservation. (If you are not happy with your selection, you can undo by clicking the seat again before submitting.)
-    7.	Refresh the page and see that your reservation has been saved.
-    8.	Navigate to the admin page by clicking the “Admin” icon on the top right of the page.
-    9.	Remove the movie you just reserved seats for.
-    10.	Navigate to the customer page and verify that the associated movie has been deleted.
-    11.	Click on the saloon you just removed and verify that the seat reservations have gone.
+    1.	Open the index.html file.
+    2.  Click on Admin Page and login as 'ADMIN123'
+    3.	Add images you will use for your movies to the /images directory.
+    4.	Add one or more movie(s).
+    5.	Navigate to the customer page by clicking the “Movies” icon on the top right of the page.
+    6.	Choose the saloon corresponding to the added movie.
+    7.	Choose your seat(s) and submit your reservation. (If you are not happy with your selection, you can undo by clicking the seat again before submitting.)
+    8.	Refresh the page and see that your reservation has been saved.
+    9.	Navigate to the admin page by clicking the “Admin” icon on the top right of the page.
+    10.	Remove the movie you just reserved seats for.
+    11.	Navigate to the customer page and verify that the associated movie has been deleted.
+    12.	Click on the saloon you just removed and verify that the seat reservations have gone.
