@@ -36,7 +36,7 @@ showForm = buttontype => {
   document.getElementById('main').style.justifyItems = 'center';
   document.getElementById('main').style.gridColumnGap = '5rem';
   goBack = () => {
-    window.location = 'http://127.0.0.1:5500/admin.html';
+    window.location = './admin.html';
   };
 
   document.getElementById('sub').onclick = changeData;
